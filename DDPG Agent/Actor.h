@@ -5,17 +5,17 @@
 
 using namespace std;
 
-class Actor :public torch::nn::Module
+class ActorImpl :public torch::nn::Module
 {
 public:
-	Actor();
+	ActorImpl();
 
 	torch::Tensor forward(torch::Tensor input);
 
-	torch::nn::Sequential getNetwork();
+	//void to(c10::Device device, bool non_block = false);
 
-	void copyHardWeight(Actor source);
-	void copySoftWeigth(Actor source, double tau);
+	void copyHardWeight(ActorImpl source);
+	void copySoftWeigth(ActorImpl source, double tau);
 private:
 	torch::nn::Linear L1{ nullptr };
 	torch::nn::Linear L2{ nullptr };
@@ -25,3 +25,4 @@ private:
 	torch::nn::Sequential net;
 };
 
+TORCH_MODULE(Actor);

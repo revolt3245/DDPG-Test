@@ -1,21 +1,28 @@
 #include <iostream>
 #include <torch/torch.h>
+#include <chrono>
 
 #include "DDPGAgent.h"
+
 int main() {
-	auto device = (torch::cuda::is_available()) ? torch::kCUDA : torch::kCPU;
+	auto device = (torch::cuda::cudnn_is_available()) ? torch::kCUDA : torch::kCPU;
 
 	Actor actor;
 	Critic critic;
 
-	actor.to(device);
-	critic.to(device);
+	for (int i = 0; i < 10000; i++) {
+		torch::Tensor Test = torch::randn({ 1, 6 });
+		auto start = std::chrono::high_resolution_clock::now();
+		actor->forward(Test);
+		auto end = std::chrono::high_resolution_clock::now();
+
+		auto elapse = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
+
+		cout << elapse << endl;
+	}
 
 	auto agent = DDPGAgent()
 		.setActor(actor)
-		.setCritic(critic)
-		;
-
-	agent.save();
+		.setCritic(critic);
 	return 0;
 }

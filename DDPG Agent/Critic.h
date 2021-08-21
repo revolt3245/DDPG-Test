@@ -2,17 +2,17 @@
 
 #include <torch/torch.h>
 
-class Critic :public torch::nn::Module
+class CriticImpl :public torch::nn::Module
 {
 public:
-	Critic();
+	CriticImpl();
 
 	torch::Tensor forward(torch::Tensor input);
 
 	torch::nn::Sequential getNetwork();
 
-	void copyHardWeight(Critic source);
-	void copySoftWeight(Critic source, double tau);
+	void copyHardWeight(CriticImpl source);
+	void copySoftWeight(CriticImpl source, double tau);
 private:
 	torch::nn::Linear L1{ nullptr };
 	torch::nn::Linear L2{ nullptr };
@@ -22,3 +22,4 @@ private:
 	torch::nn::Sequential net;
 };
 
+TORCH_MODULE(Critic);

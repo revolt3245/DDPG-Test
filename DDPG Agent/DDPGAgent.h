@@ -29,8 +29,6 @@ public:
 
 	void save();
 protected:
-	void copyHardWeight(shared_ptr<torch::nn::Module> target, shared_ptr<torch::nn::Module> source);
-	void copySoftWeight(shared_ptr<torch::nn::Module> target, shared_ptr<torch::nn::Module> source);
 private:
 	Actor actor;
 	Critic critic;
