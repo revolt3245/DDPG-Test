@@ -13,5 +13,9 @@ int main() {
 	DDPGAgent agent = DDPGAgent()
 		.setActor(actor)
 		.setCritic(critic);
+
+	auto aOptimizer = agent.getActorOptimizer();
+	auto cOptimizer = agent.getCriticOptimizer();
+
 	return 0;
 }
