@@ -18,39 +18,31 @@
     <ClCompile Include="main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="DDPGAgent.cpp">
+    <ClCompile Include="ExpBuffer.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Actor.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Critic.cpp">
+    <ClCompile Include="DDPGAgent.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="ExpBuffer.cpp">
+    <ClCompile Include="Critic.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DDPGAgent.h">
+    <ClInclude Include="ExpBuffer.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Actor.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="DDPGAgent.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
     <ClInclude Include="Critic.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="ExpBuffer.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Actor.pt">
-      <Filter>리소스 파일</Filter>
-    </None>
-    <None Include="Critic.pt">
-      <Filter>리소스 파일</Filter>
-    </None>
   </ItemGroup>
 </Project>

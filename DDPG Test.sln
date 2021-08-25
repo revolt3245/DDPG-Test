@@ -13,6 +13,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Neural Network", "Neural Ne
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PyTorchTest", "PyTorchTest\PyTorchTest.vcxproj", "{FCE0B895-5BE1-42AE-924D-43FBC5CF8BE0}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DDPG Agent 2", "DDPG Agent 2\DDPG Agent 2.vcxproj", "{F4ECEC41-474D-47B2-A814-D27D2B11B715}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -61,6 +63,14 @@ Global
 		{FCE0B895-5BE1-42AE-924D-43FBC5CF8BE0}.Release|x64.Build.0 = Release|x64
 		{FCE0B895-5BE1-42AE-924D-43FBC5CF8BE0}.Release|x86.ActiveCfg = Release|Win32
 		{FCE0B895-5BE1-42AE-924D-43FBC5CF8BE0}.Release|x86.Build.0 = Release|Win32
+		{F4ECEC41-474D-47B2-A814-D27D2B11B715}.Debug|x64.ActiveCfg = Debug|x64
+		{F4ECEC41-474D-47B2-A814-D27D2B11B715}.Debug|x64.Build.0 = Debug|x64
+		{F4ECEC41-474D-47B2-A814-D27D2B11B715}.Debug|x86.ActiveCfg = Debug|Win32
+		{F4ECEC41-474D-47B2-A814-D27D2B11B715}.Debug|x86.Build.0 = Debug|Win32
+		{F4ECEC41-474D-47B2-A814-D27D2B11B715}.Release|x64.ActiveCfg = Release|x64
+		{F4ECEC41-474D-47B2-A814-D27D2B11B715}.Release|x64.Build.0 = Release|x64
+		{F4ECEC41-474D-47B2-A814-D27D2B11B715}.Release|x86.ActiveCfg = Release|Win32
+		{F4ECEC41-474D-47B2-A814-D27D2B11B715}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

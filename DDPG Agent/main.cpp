@@ -5,7 +5,7 @@
 #include "DDPGAgent.h"
 
 int main() {
-	auto device = (torch::cuda::cudnn_is_available()) ? torch::kCUDA : torch::kCPU;
+	auto device = (torch::cuda::is_available()) ? torch::kCUDA : torch::kCPU;
 
 	Actor actor;
 	Critic critic;
@@ -20,9 +20,5 @@ int main() {
 
 		cout << elapse << endl;
 	}
-
-	auto agent = DDPGAgent()
-		.setActor(actor)
-		.setCritic(critic);
 	return 0;
 }
