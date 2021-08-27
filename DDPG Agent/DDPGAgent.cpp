@@ -1,6 +1,6 @@
 #include "DDPGAgent.h"
 
-DDPGAgent& DDPGAgent::setActor(Actor actor) {
+DDPGAgent& DDPGAgent::setActor(Actor actor, torch::Dtype dtype) {
 	this->actor = actor;
 	this->actorTarget = Actor();
 
@@ -8,7 +8,7 @@ DDPGAgent& DDPGAgent::setActor(Actor actor) {
 
 	return *this;
 }
-DDPGAgent& DDPGAgent::setCritic(Critic critic) {
+DDPGAgent& DDPGAgent::setCritic(Critic critic, torch::Dtype dtype) {
 	this->critic = critic;
 	this->criticTarget = Critic();
 

@@ -1,6 +1,9 @@
 #pragma once
 #include <torch/torch.h>
 #include <array>
+#include <iostream>
+
+using namespace std;
 
 struct Exp {
 	torch::Tensor current;
@@ -8,8 +11,14 @@ struct Exp {
 	torch::Tensor reward;
 	torch::Tensor next;
 
-	Exp() :current(), action(), reward(), next() {};
-	Exp(torch::Tensor current, torch::Tensor action, torch::Tensor reward, torch::Tensor next) :current(current), action(action), reward(reward), next(next) {};
+	Exp() :current(), action(), reward(), next() {
+	};
+	Exp(torch::Tensor current, torch::Tensor action, torch::Tensor reward, torch::Tensor next) :current(current), action(action), reward(reward), next(next) {
+	};
+
+	friend ostream& operator<<(ostream& os, Exp exp);
+
+	Exp& operator=(const Exp& obj);
 };
 
 class ExpBuffer

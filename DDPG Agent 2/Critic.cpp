@@ -1,8 +1,8 @@
 #include "Critic.h"
 
 CriticImpl::CriticImpl() {
-	this->aL1 = torch::nn::Linear(2, 100);
-	this->sL1 = torch::nn::Linear(6, 100);
+	this->aL1 = torch::nn::Linear(1, 100);
+	this->sL1 = torch::nn::Linear(4, 100);
 	this->L2 = torch::nn::Linear(100, 100);
 	this->L3 = torch::nn::Linear(100, 100);
 	this->L4 = torch::nn::Linear(100, 1);

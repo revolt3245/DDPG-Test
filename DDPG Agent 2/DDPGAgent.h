@@ -15,18 +15,19 @@ public:
 	DDPGAgent()
 		:actor(), critic(),
 		actorTarget(), criticTarget(),
-		gamma(0.99),
+		gamma(0.9),
 		aAlpha(1e-3), cAlpha(1e-3),
 		tau(0.01),
 		isStochastic(false),
-		sigma(1.0),
-		minibatchSize(256), epoch(10),
+		sigma(10.0),
+		minibatchSize(50), epoch(10),
+		replayBuffer(1e6),
 		aLoss(), cLoss()
 	{
 	};
 
-	DDPGAgent& setActor(Actor Actor);
-	DDPGAgent& setCritic(Critic Critic);
+	DDPGAgent& setActor(Actor Actor, torch::Dtype dtype);
+	DDPGAgent& setCritic(Critic Critic, torch::Dtype dtype);
 
 	DDPGAgent& setStochastic(bool isStochastic);
 
@@ -35,7 +36,7 @@ public:
 	torch::Tensor act(torch::Tensor currentState);
 	void push(torch::Tensor currentState, torch::Tensor action, torch::Tensor reward, torch::Tensor nextState);
 
-	void train(torch::optim::SGD aOptimizer, torch::optim::SGD cOptimizer);
+	void train(torch::optim::SGD& aOptimizer, torch::optim::SGD& cOptimizer);
 
 	void save();
 

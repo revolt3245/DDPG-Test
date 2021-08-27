@@ -1,7 +1,7 @@
 #include "Actor.h"
 
 ActorImpl::ActorImpl() {
-	this->L1 = torch::nn::Linear(6, 100);
+	this->L1 = torch::nn::Linear(4, 100);
 	this->L2 = torch::nn::Linear(100, 100);
 	this->L3 = torch::nn::Linear(100, 100);
 	this->L4 = torch::nn::Linear(100, 1);
