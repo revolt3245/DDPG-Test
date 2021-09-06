@@ -30,6 +30,9 @@
     <ClCompile Include="Critic.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="OUNoise.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ExpBuffer.h">
@@ -44,10 +47,27 @@
     <ClInclude Include="Critic.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="OUNoise.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="D:\matlab\ReinforcementLearning\matlab\CustomEnvironment\CartPole\CartPoleContinuousAction2.m">
+    <None Include="Actor.pt">
       <Filter>리소스 파일</Filter>
     </None>
+    <None Include="Critic.pt">
+      <Filter>리소스 파일</Filter>
+    </None>
+    <None Include="CartPoleContinuousAction2.m">
+      <Filter>리소스 파일</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Episodes.txt">
+      <Filter>리소스 파일</Filter>
+    </Text>
+    <Text Include="OUNoise_Episodes.txt">
+      <Filter>리소스 파일</Filter>
+    </Text>
   </ItemGroup>
 </Project>

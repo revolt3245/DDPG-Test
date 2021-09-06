@@ -6,6 +6,8 @@ NetworkImpl::NetworkImpl()
 	this->L2 = torch::nn::Linear(10, 10);
 	this->L3 = torch::nn::Linear(10, 1);
 
+
+
 	this->net = this->register_module(
 		"net",
 		torch::nn::Sequential(

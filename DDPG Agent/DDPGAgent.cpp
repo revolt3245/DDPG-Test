@@ -1,3 +1,4 @@
+#include "..\DDPG Agent 2\DDPGAgent.h"
 #include "DDPGAgent.h"
 
 DDPGAgent& DDPGAgent::setActor(Actor actor, torch::Dtype dtype) {

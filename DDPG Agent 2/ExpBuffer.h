@@ -10,15 +10,21 @@ struct Exp {
 	torch::Tensor action;
 	torch::Tensor reward;
 	torch::Tensor next;
+	torch::Tensor terminate;
 
-	Exp() :current(), action(), reward(), next() {
+	Exp() :current(), action(), reward(), next(), terminate() {
 	};
-	Exp(torch::Tensor current, torch::Tensor action, torch::Tensor reward, torch::Tensor next) :current(current), action(action), reward(reward), next(next) {
+	Exp(torch::Tensor current, torch::Tensor action, torch::Tensor reward, torch::Tensor next, torch::Tensor terminate) :current(current), action(action), reward(reward), next(next), terminate(terminate) {
 	};
 
 	friend ostream& operator<<(ostream& os, Exp exp);
 
 	Exp& operator=(const Exp& obj);
+
+	Exp cpu();
+	Exp cuda();
+
+	Exp to(torch::Device device);
 };
 
 class ExpBuffer
@@ -38,7 +44,10 @@ public:
 	bool isEmpty();
 
 	Exp sample();
+	Exp sample(unsigned int idx);
+	Exp sample(torch::Tensor indices);
 	Exp sampleBatch(size_t sampleSize);
+	Exp sampleBatch(size_t sampleSize, torch::Device device);
 private:
 	size_t Size;
 	std::vector<Exp> Buffer;

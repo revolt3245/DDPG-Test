@@ -15,6 +15,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PyTorchTest", "PyTorchTest\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DDPG Agent 2", "DDPG Agent 2\DDPG Agent 2.vcxproj", "{F4ECEC41-474D-47B2-A814-D27D2B11B715}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PyTorchTest 2", "PyTorchTest 2\PyTorchTest 2.vcxproj", "{50E45E59-FE79-4C0A-AD33-E9745086D34B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -71,6 +73,14 @@ Global
 		{F4ECEC41-474D-47B2-A814-D27D2B11B715}.Release|x64.Build.0 = Release|x64
 		{F4ECEC41-474D-47B2-A814-D27D2B11B715}.Release|x86.ActiveCfg = Release|Win32
 		{F4ECEC41-474D-47B2-A814-D27D2B11B715}.Release|x86.Build.0 = Release|Win32
+		{50E45E59-FE79-4C0A-AD33-E9745086D34B}.Debug|x64.ActiveCfg = Debug|x64
+		{50E45E59-FE79-4C0A-AD33-E9745086D34B}.Debug|x64.Build.0 = Debug|x64
+		{50E45E59-FE79-4C0A-AD33-E9745086D34B}.Debug|x86.ActiveCfg = Debug|Win32
+		{50E45E59-FE79-4C0A-AD33-E9745086D34B}.Debug|x86.Build.0 = Debug|Win32
+		{50E45E59-FE79-4C0A-AD33-E9745086D34B}.Release|x64.ActiveCfg = Release|x64
+		{50E45E59-FE79-4C0A-AD33-E9745086D34B}.Release|x64.Build.0 = Release|x64
+		{50E45E59-FE79-4C0A-AD33-E9745086D34B}.Release|x86.ActiveCfg = Release|Win32
+		{50E45E59-FE79-4C0A-AD33-E9745086D34B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

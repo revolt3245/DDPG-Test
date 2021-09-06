@@ -6,7 +6,7 @@
 
 using namespace std;
 
-const unsigned int epoch = 1000;
+const unsigned int epoch = 10000;
 
 int main() {
 	//Dataset
@@ -34,7 +34,7 @@ int main() {
 	//Optimizer && Loss function
 	Network n;
 
-	torch::optim::SGD optimizer(n->parameters(), 0.1);
+	torch::optim::SGD optimizer(n->parameters(), 0.01);
 	torch::nn::MSELoss loss;
 
 	//train

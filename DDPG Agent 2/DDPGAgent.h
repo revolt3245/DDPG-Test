@@ -15,14 +15,14 @@ public:
 	DDPGAgent()
 		:actor(), critic(),
 		actorTarget(), criticTarget(),
-		gamma(0.9),
-		aAlpha(1e-3), cAlpha(1e-3),
-		tau(0.01),
+		gamma(0.99),
+		aAlpha(1e-3), cAlpha(5e-4),
+		tau(0.001),
 		isStochastic(false),
-		sigma(10.0),
-		minibatchSize(50), epoch(10),
+		sigma(0.2),
+		minibatchSize(256), epoch(1),
 		replayBuffer(1e6),
-		aLoss(), cLoss()
+		cLoss()
 	{
 	};
 
@@ -34,15 +34,33 @@ public:
 	DDPGAgent& setDevice();
 
 	torch::Tensor act(torch::Tensor currentState);
-	void push(torch::Tensor currentState, torch::Tensor action, torch::Tensor reward, torch::Tensor nextState);
+	void push(torch::Tensor currentState, torch::Tensor action, torch::Tensor reward, torch::Tensor nextState, torch::Tensor terminateTensor);
 
-	void train(torch::optim::SGD& aOptimizer, torch::optim::SGD& cOptimizer);
+	size_t getBufferSize();
+	
+	void train(torch::optim::SGD& aOptimizer, torch::optim::SGD& cOptimizer, torch::Device device);
+	void train(torch::optim::Adam& aOptimizer, torch::optim::Adam& cOptimizer, torch::Device device);
+
+	void noiseDiminish(double rate, double threshold);
+
+	void eval();
+	void trainMode();
 
 	void save();
 
+	double getSigma();
+
+	double getQ0();
+
 	torch::optim::SGD getActorOptimizer();
 	torch::optim::SGD getCriticOptimizer();
-protected:
+
+	torch::optim::Adam getActorOptimizerAdam();
+	torch::optim::Adam getCriticOptimizerAdam();
+
+	torch::optim::RMSprop getActorOptimizerRMS();
+	torch::optim::RMSprop getCriticOptimizerRMS();
+
 	void targetSoftUpdate();
 	void targetHardUpdate();
 private:
@@ -67,7 +85,6 @@ private:
 	size_t minibatchSize;
 	int epoch;
 
-	torch::nn::MSELoss aLoss;
 	torch::nn::MSELoss cLoss;
 };
 
